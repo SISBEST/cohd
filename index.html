@@ -1,2 +1,78 @@
+<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+
+<!--  Content  -->
 <title>Chronicles Of Hot Dog</title>
-<meta http-equiv="refresh" content="1;URL='https://apps.samuelsharp.com/cohd'" />
+<h1>Chronicles Of Hot Dog<br /> <span><a href="/cohd/play.html">Click here to begin</a><br /> <span><a href="https://www.eventbrite.com/e/official-world-premiere-cohd-the-train-ride-tickets-71130255509">Get tickets to WORLD PREMIERE of Episode 2!</a></span></h1>
+  
+<!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
+<video autoplay loop id="video-background" muted plays-inline>
+  <source src="https://apps.samuelsharp.com/cohdfiles/backg.mp4" type="video/mp4">
+</video>
+<iframe id="start" src="http://apps.samuelsharp.com/cohdfiles/end.mp3" allow="autoplay" style="display:none">
+</iframe>
+<script>
+window.setInterval("reloadIFrame();", 95000);
+function reloadIFrame() { document.getElementById("start").src="http://apps.samuelsharp.com/cohdfiles/end.mp3";
+}
+</script>
+<style>
+@font-face {
+  font-family:Chinese Rocks;
+  src: url(font.ttf);
+}
+body {
+  margin: 0;
+  padding: 0;
+/*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
+  background: #333;
+  background-attachment: fixed;
+  background-size: cover;
+  cursor: url('http://apps.samuelsharp.com/cohd/cursorcohd.png'), crosshair;
+}
+
+/* The only rule that matters */
+#video-background {
+/*  making the video fullscreen  */
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+  font-family: 'Chinese Rocks', 'Major Mono Display', sans;
+  cursor: url('http://apps.samuelsharp.com/cohd/cursorcohd.png'), crosshair;
+}
+
+
+h1 {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  font-size: 36px;
+  letter-spacing: 3px;
+  color: #fff;
+  font-family: 'Chinese Rocks', 'Major Mono Display', sans;
+  text-align: center;
+  cursor: url('cursorcohd.png'), crosshair;
+}
+
+h1 span {
+  font-family: 'Chinese Rocks', 'Major Mono Display', sans;
+  letter-spacing: 0;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: url('cursorcohd.png'), crosshair;
+}
+
+h1 span a {
+  color: #fff;
+  font-family: 'Chinese Rocks', 'Major Mono Display', sans;
+  cursor: url('cursorcohd.png'), crosshair;
+}
+a{
+  text-decoration: none;
+  }
+</style>
