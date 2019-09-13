@@ -6,13 +6,13 @@
   
 <!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
 <video autoplay loop id="video-background" muted plays-inline>
-  <source src="https://apps.samuelsharp.com/cohdfiles/backg.mp4" type="video/mp4">
+  <source src="backg.mp4" type="video/mp4">
 </video>
-<iframe id="start" src="http://apps.samuelsharp.com/cohdfiles/end.mp3" allow="autoplay" style="display:none">
+<iframe id="start" src="end.mp3" allow="autoplay" style="display:none">
 </iframe>
 <script>
 window.setInterval("reloadIFrame();", 95000);
-function reloadIFrame() { document.getElementById("start").src="http://apps.samuelsharp.com/cohdfiles/end.mp3";
+function reloadIFrame() { document.getElementById("start").src="end.mp3";
 }
 </script>
 <style>
