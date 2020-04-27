@@ -3,22 +3,24 @@
 <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script src="gamepad.js" charset="utf-8"></script>
 <script type="text/javascript">
-  function loadpg() {
-    $("body").fadeOut(2000, function(){
-      window.location.href = "mainmenu.html";
-    });
+  function switchl() {
+    console.log("-1 [L]");
   }
-  Mousetrap.bind('a', loadpg);
+  function switchr() {
+    console.log("+1 [R]");
+  }
+  Mousetrap.bind('left', switchl);
+  Mousetrap.bind('right', switchr);
   const gamepad = new Gamepad();
-  gamepad.on('press', 'button_1', () => {
-    loadpg();
+  gamepad.on('press', 'shoulder_top_left', () => {
+    switchl();
+  });
+  gamepad.on('press', 'shoulder_top_right', () => {
+    switchr();
   });
 </script>
 <title>Chronicles Of Hot Dog</title>
-<span>
 <h1>Chronicles Of Hot Dog<br />
-    <p>Press <img src="aicon.svg" draggable="false" height="50px" alt="A" /> to begin!</p></h1><br />
-    </span>
 <video autoplay loop id="video-background" muted plays-inline>
   <source src="backg.mp4" type="video/mp4">
 </video>
@@ -53,7 +55,7 @@
 
   h1 {
     position: absolute;
-    top: 60%;
+    top: 10%;
     width: 100%;
     font-size: 36px;
     letter-spacing: 3px;
@@ -62,7 +64,11 @@
     text-align: center;
     cursor: url('cursorcohd.png'), crosshair;
   }
-
+  img{
+    background-color: #009b3a;
+    padding: 3px;
+    border-radius: 25px;
+  }
   h1 span {
     font-family: 'Chinese Rocks', 'Major Mono Display', sans;
     letter-spacing: 0;

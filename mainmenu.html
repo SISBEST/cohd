@@ -3,22 +3,47 @@
 <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script src="gamepad.js" charset="utf-8"></script>
 <script type="text/javascript">
-  function loadpg() {
+  function loada() {
     $("body").fadeOut(2000, function(){
-      window.location.href = "mainmenu.html";
+      window.location.href = "episodes.html";
     });
   }
-  Mousetrap.bind('a', loadpg);
+  function loadb() {
+    $("body").fadeOut(2000, function(){
+      window.location.href = "index.html";
+    });
+  }
+  function loadx() {
+    $("body").fadeOut(2000, function(){
+      window.location.href = "settings.html";
+    });
+  }
+  function loady() {
+    $("body").fadeOut(2000, function(){
+      window.location.href = "quit.html";
+    });
+  }
+  Mousetrap.bind('a', loada);
+  Mousetrap.bind('b', loadb);
+  Mousetrap.bind('x', loadx);
+  Mousetrap.bind('y', loady);
   const gamepad = new Gamepad();
   gamepad.on('press', 'button_1', () => {
-    loadpg();
+    loada();
+  });
+  gamepad.on('press', 'button_2', () => {
+    loadb();
+  });
+  gamepad.on('press', 'button_3', () => {
+    loadx();
+  });
+  gamepad.on('press', 'button_4', () => {
+    loady();
   });
 </script>
 <title>Chronicles Of Hot Dog</title>
-<span>
 <h1>Chronicles Of Hot Dog<br />
-    <p>Press <img src="aicon.svg" draggable="false" height="50px" alt="A" /> to begin!</p></h1><br />
-    </span>
+  <img style="text-align: center;" draggable="false" src="menuoptions.png" alt="Press A for episodes"></h1>
 <video autoplay loop id="video-background" muted plays-inline>
   <source src="backg.mp4" type="video/mp4">
 </video>
@@ -53,7 +78,7 @@
 
   h1 {
     position: absolute;
-    top: 60%;
+    top: 10%;
     width: 100%;
     font-size: 36px;
     letter-spacing: 3px;
@@ -62,7 +87,11 @@
     text-align: center;
     cursor: url('cursorcohd.png'), crosshair;
   }
-
+  img{
+    background-color: #009b3a;
+    padding: 3px;
+    border-radius: 25px;
+  }
   h1 span {
     font-family: 'Chinese Rocks', 'Major Mono Display', sans;
     letter-spacing: 0;

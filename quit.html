@@ -2,23 +2,9 @@
 <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js" charset="utf-8"></script>
 <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script src="gamepad.js" charset="utf-8"></script>
-<script type="text/javascript">
-  function loadpg() {
-    $("body").fadeOut(2000, function(){
-      window.location.href = "mainmenu.html";
-    });
-  }
-  Mousetrap.bind('a', loadpg);
-  const gamepad = new Gamepad();
-  gamepad.on('press', 'button_1', () => {
-    loadpg();
-  });
-</script>
 <title>Chronicles Of Hot Dog</title>
-<span>
-<h1>Chronicles Of Hot Dog<br />
-    <p>Press <img src="aicon.svg" draggable="false" height="50px" alt="A" /> to begin!</p></h1><br />
-    </span>
+<h1>Game is safe to quit!<br />
+    <p>Thank you for playing!</p><br /></h1>
 <video autoplay loop id="video-background" muted plays-inline>
   <source src="backg.mp4" type="video/mp4">
 </video>
