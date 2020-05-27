@@ -1,0 +1,83 @@
+<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+<script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js" charset="utf-8"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script src="gamepad.js" charset="utf-8"></script>
+<script type="text/javascript">
+  function loadpg() {
+    $("body").fadeOut(2000, function() {
+      window.location.href = "mainmenu.html";
+    });
+  }
+  Mousetrap.bind('a', loadpg);
+  const gamepad = new Gamepad();
+  gamepad.on('press', 'button_1', () => {
+    loadpg();
+  });
+</script>
+<title>Chronicles Of Hot Dog</title>
+<h1>404 Page Not Found<br />
+  <p><img src="aicon.svg" /> Back</p><br />
+</h1>
+<video autoplay loop id="video-background" muted plays-inline>
+  <source src="backg.mp4" type="video/mp4">
+</video>
+<style>
+  @font-face {
+    font-family: Chinese Rocks;
+    src: url(font.ttf);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #333;
+    background-attachment: fixed;
+    background-size: cover;
+    cursor: url('http://apps.samuelsharp.com/cohd/cursorcohd.png'), crosshair;
+  }
+
+  #video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    font-family: 'Chinese Rocks', 'Major Mono Display', sans;
+    cursor: url('http://apps.samuelsharp.com/cohd/cursorcohd.png'), crosshair;
+  }
+
+
+  h1 {
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    font-size: 36px;
+    letter-spacing: 3px;
+    color: #fff;
+    font-family: 'Chinese Rocks', 'Major Mono Display', sans;
+    text-align: center;
+    cursor: url('cursorcohd.png'), crosshair;
+  }
+
+  h1 span {
+    font-family: 'Chinese Rocks', 'Major Mono Display', sans;
+    letter-spacing: 0;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: url('cursorcohd.png'), crosshair;
+  }
+
+  h1 span a {
+    color: #fff;
+    font-family: 'Chinese Rocks', 'Major Mono Display', sans;
+    cursor: url('cursorcohd.png'), crosshair;
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>
